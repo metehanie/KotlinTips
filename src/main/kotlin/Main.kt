@@ -18,9 +18,15 @@ fun main() {
     val freqTable = word.groupingBy { it }.eachCount()
     freqTable.forEach {
         if (it.key == ' ') {
-            println(" ${it.value} adet boşluk var.")
+            println("There are ${it.value} spaces in this sentence..")
         }
     }
-
     println(freqTable) // {H=1, e=4, l=3, o=2,  =5, W=1, r=1, d=1, !=1, M=2, y=1, n=2, a=2, m=1, i=1, s=1, t=1, h=1, .=1}
+
+    // Swapping without third variable.
+    var x = 816
+    var y = 42
+    println("Before swapping: x = $x - y = $y")
+    x = y.also { y = x }
+    println("After swapping: x = $x - y = $y")
 }
